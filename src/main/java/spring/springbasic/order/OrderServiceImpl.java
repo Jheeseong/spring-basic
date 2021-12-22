@@ -8,13 +8,9 @@ import spring.springbasic.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements  OrderService{
 
-    private final MemberRepository memberRepository;
-    private final DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
