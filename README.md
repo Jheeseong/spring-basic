@@ -1,6 +1,6 @@
 # spring-basic
 
-# v1.04 12/12
+# v1.04 12/22
 
 스프링으로 전환, @Configuration, @Bean 추가
 
