@@ -3,15 +3,15 @@ package spring.springbasic.discount;
 import spring.springbasic.member.Grade;
 import spring.springbasic.member.Member;
 
-public class RateDiscountPolicy implements  DiscountPolicy{
+public class RateDiscountPolicy implements DiscountPolicy {
 
-    private  int discountPercent = 10;
+    private int discountPercent = 10; //10% 할인
 
     @Override
     public int discount(Member member, int price) {
         if (member.getGrade() == Grade.VIP) {
             return price * discountPercent / 100;
-        }else {
+        } else {
             return 0;
         }
     }
