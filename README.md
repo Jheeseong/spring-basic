@@ -4,10 +4,13 @@ v1.02 12/22
 RateDiscountPolicy(새로운 정책)추가 및 테스트
 
 문제점
+
 OCP,DIP 같은 객체지향 설계 원칙을 준수하지 못함
+
 DIP
 -OrderServiceImpl은 DiscountPolicy 인터페이스에 의존하면서 RateDiscountPolicy 혹은
  FixDiscountPolicy에 동시 의존
+
 OCP
 -기능을 확장해서 변경하면, OrderServiceImpl에 영향
 
