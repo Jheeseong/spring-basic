@@ -1,5 +1,26 @@
 # spring-basic
 
+# v1.06 12/23
+
+@ComponentScan을 통하여 컴포넌트 애노테이션이 붙은 클래스를 스캔 후 스프링 빈에 자동 등록
+
+@Autowired를 통해 의존관게 주입
+
+MemoryMemberRepository, RateDiscountPolicy, MemberServiceimpl에 컴포넌트 추가
+
+MemberServiceimpl, OrderServiceimpl에 Autowired 추가 
+
+클래스를 스프링 빈에 등록 시 클래스명 그대로 사용하되 맨 앞글자만 소문자를 사용(빈 이름 지정 가능)
+
+@Contriller : 스프링 MVC 컨트롤러로 인식
+
+@Repository : 스프링 데이터 접근 계층으로 인식하고 데이터 계층의 예외를 스프링 예외로 변환
+
+@Configuration : 스프링 빈이 싱글톤을 유지하도록 처리
+
+@Service : 개발자들이 핵심 비지니스 계층 인식 하도록 함
+
+
 # v1.05 12/23
 
 스프링 없는 순수한 ID 컨테이너 테스트, 싱글톤 패턴 적용 테스트, 싱글톤 컨테이너 적용 테스트 작성
