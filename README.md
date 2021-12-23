@@ -1,5 +1,17 @@
 # spring-basic
 
+# v1.04 12/22
+
+스프링으로 전환, @Configuration, @Bean 추가
+
+@Configuration을 통하여 Appconfig에 설정을 구성
+
+@Bean을 통하여 스프링 컨케이너에 스프링 빈 등록
+
+기존에는 AppConfig를 사용하여 직접 객체를 생성 및 DI하였지만 위 설정을 통해 스프링컨테이너를 통해 사용
+
+이젠 AppConfig를 이용한 조회가 아닌 getBean()을 통해 스프링 빈(객체)를 검색
+
 # v1.03 12/22
 
 AppConfig 추가 및 도메인, 테스트 코드 수정
