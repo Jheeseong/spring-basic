@@ -1,5 +1,41 @@
 # spring-basic
 
+# v1.07 12/25
+
+2개의 빈이 조회 될 시 NoUniqueBeanDefinitionException 오류가 발생(FixDiscountPolicy,RateDiscountPolicy)
+
+@Autowired 필드명 매칭, @Qualifier 매칭, @Primary 매칭으로 해결
+
+- @Autowired
+
+타입 맻이을 시도하고 여러 빈이 있으면 필드 이름, 파라미터 이름으로 빈 추가 후 매칭
+
+- @Qualifier
+
+추가 구분자를 붙여주는 방법을 제공, 빈이름 변경은 아님
+
+@Qualifier끼리 매칭
+
+빈 이름 매칭
+
+- @Primary
+
+우선 순위를 정하는 방법
+
+@Primary는 기본 값처럼 동작하고 @Qualifier은 상세하게 동작하며 @Qualifier가 우선권을 가짐
+
+- 조회한 빈이 모두 필요할 떄 List,Map 사용
+
+map키에 스프링 빈의 이름을 넣고 DiscountPolicy 타입으로 조회한 모든 스프링 빈을 담음
+
+List에 DiscountPolicy 타입으로 조회한 모든 스프링을 담음
+
+선택적으로 조회한 빈을 사용 가능
+
+-> 자동 조회 기능을 기본으로 사용하지만 다형성을 활용하는 비지니스 로직은 수동 등록을 고민
+
+   직접 등록하는 기술 지원 객체는 수동 등록
+
 # v1.06 12/23
 
 @ComponentScan을 통하여 컴포넌트 애노테이션이 붙은 클래스를 스캔 후 스프링 빈에 자동 등록
