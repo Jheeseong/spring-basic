@@ -5,7 +5,7 @@ import spring.springbasic.member.Grade;
 import spring.springbasic.member.Member;
 
 
-//@Component
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;
