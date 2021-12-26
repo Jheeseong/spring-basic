@@ -1,5 +1,32 @@
 # spring-basic
 
+# v1.08 12/25
+
+빈 생명주기 콜백
+
+스프링을 통한 초기화 작업과 종료 작업을 진행
+
+- 스프링 빈의 이벤트 라이프사이클
+
+스프링 컨테이너 생성 -> 스프린 빈 생성 -> 의존관계 주입 -> 초기화 콜백 -> 사용 -> 소멸전 콜백 -> 스프링 종료
+
+객체의 생성과 초기화를 분리해야 유지보수 관점에서 유리
+
+스프링의 빈 생명주기 콜백 지원 방법
+
+- 인터페이스(InitializingBean, DisposableBean)
+- 빈 설정을 통한 초기화 메서드. 종료메서드 지정
+- @PostConstruct, @PreDestroy 애노테이션 지원
+
+최근 스프링에서 @PostConstruct, @PreDestroy 애노테이션을 권장
+
+편리하며 자바 표준이라 어느 컨테이너에서든 동작
+
+컴포넌트 스캔과 어울림
+
+외부 라이브러리에는 적용 불가
+
+
 # v1.07 12/25
 
 2개의 빈이 조회 될 시 NoUniqueBeanDefinitionException 오류가 발생(FixDiscountPolicy,RateDiscountPolicy)
