@@ -1,6 +1,5 @@
 package spring.springbasic.mylog;
 
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,20 +11,19 @@ import javax.servlet.http.HttpServletRequest;
 public class MyLogController {
 
     private final MyLogService myLogService;
-    private final ObjectProvider<MyLog> myLogObjectProvider;
+    private final MyLog myLog;
 
     @Autowired
-    public MyLogController(MyLogService myLogService, ObjectProvider<MyLog> myLogObjectProvider) {
+    public MyLogController(MyLogService myLogService, MyLog myLog) {
         this.myLogService = myLogService;
-        this.myLogObjectProvider = myLogObjectProvider;
+        this.myLog = myLog;
     }
-
 
     @RequestMapping("log")
     @ResponseBody
     public String log(HttpServletRequest request) {
         String url = request.getRequestURL().toString();
-        MyLog myLog = myLogObjectProvider.getObject();
+        System.out.println("myLog = " + myLog.getClass());
         myLog.setUrl(url);
 
         myLog.log("controller test");
