@@ -1,6 +1,34 @@
 # spring-basic
 
-# v 1.09 12/26
+# v1.10 12/27
+
+request 스코프
+
+동시에 여러 HTTP 요청이 올 경우 어떤 요청이 남긴 로그인지 구분하기 위해 request 스코프를 사용
+
+request
+- HTTP 요청 하나가 들어오고 나갈 떄까지 유지되는 스코프.
+- 각각의 HTTP 요청마다 별도의 빈 인스턴스 생성 및 관리
+
+로그가 남도록 request 스코프를 활용하여 개발 진행
+
+Service와 Controller MyLog로 구분하여 개발
+
+-> 실제 고객 요청이 오지 않아 request 스코프 빈이 생성되지 않음
+
+해결법
+- Provider 사용
+- Proxy 사용
+ 
+provider 사용
+- ObjectProvider.getObject()를 호출하는 시점까지 request 스코프 빈 생성을 지연
+
+proxy 사용
+- CGLIB 라이브러리로 MyLog를 상속받은 가짜 프록시 객체를 만들어 주입
+- 실제 요청 시 내부에서 실제 빈을 요청
+- Provider과 Proxy의 핵심은 객체 조회를 필요 시점까지 지연처리 하는 것
+
+# v1.09 12/26
 
 싱글톤과 프로토타입 빈
 
